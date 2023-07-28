@@ -25,6 +25,7 @@ import lombok.Setter;
 @Setter
 public class Post {
 
+	
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	 private Integer postId;
