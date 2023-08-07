@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +30,6 @@ import com.lti.blog.paylods.PostDto;
 import com.lti.blog.paylods.PostResponse;
 import com.lti.blog.services.FileService;
 import com.lti.blog.services.PostService;
-
-import jakarta.servlet.http.HttpServletResponse;
 
 @RestController
 @RequestMapping("/api/")

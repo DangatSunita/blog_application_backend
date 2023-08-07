@@ -2,6 +2,8 @@ package com.lti.blog.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +20,7 @@ import com.lti.blog.paylods.ApiResponse;
 import com.lti.blog.paylods.CategoryDto;
 import com.lti.blog.services.CategoryService;
 
-import jakarta.validation.Valid;
+
 
 @RestController
 @RequestMapping("/api/categories")
