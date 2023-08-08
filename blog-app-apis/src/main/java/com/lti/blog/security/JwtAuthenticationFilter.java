@@ -43,7 +43,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 		{
 			System.out.println(headerNames.nextElement());
 		}
-		// Bearer 9070656gjkhj
+		// Bearer ghgjh9070656gjkhj
 
 		System.out.println(requestToken);
 
