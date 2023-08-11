@@ -2,11 +2,8 @@ package com.lti.blog.services;
 
 import java.util.List;
 
-import com.lti.blog.entities.Post;
 import com.lti.blog.paylods.PostDto;
 import com.lti.blog.paylods.PostResponse;
-
-import jakarta.persistence.criteria.CriteriaBuilder.In;
 
 public interface PostService {
 	
