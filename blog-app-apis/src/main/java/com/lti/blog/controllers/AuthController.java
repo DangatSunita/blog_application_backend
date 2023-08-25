@@ -37,13 +37,13 @@ public class AuthController {
 
 	@Autowired
 	private AuthenticationManager authenticationManager;
-	
+
 	@Autowired
 	private UserService userService;
-	
+
 	@Autowired
 	private ModelMapper modelMapper;
-	
+
 	@PostMapping("/login")
 	public ResponseEntity<JwtAuthResponse> createToken(@RequestBody JwtAuthRequest request) throws Exception {
 		this.authenticate(request.getUsername(), request.getPassword());
@@ -53,30 +53,30 @@ public class AuthController {
 		JwtAuthResponse response = new JwtAuthResponse();
 		response.setToken(token);
 		response.setUser(this.modelMapper.map((User) userDetails, UserDto.class));
-		
+
 		return new ResponseEntity<JwtAuthResponse>(response, HttpStatus.OK);
 	}
-	
+
 	private void authenticate(String username, String password) throws Exception {
 
 		UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username,
 				password);
 		try {
 			this.authenticationManager.authenticate(authenticationToken);
-			
+
 		} catch (BadCredentialsException e) {
 			System.out.println("Invalid Details");
 			throw new ApiException("Invalid username or password");
 		}
-			
+
 	}
-	
+
 	// Register new user API
 
-		@PostMapping("/register")
-		public ResponseEntity<UserDto> registerUser(@Valid @RequestBody UserDto userDto) {
-			UserDto registeredUser = this.userService.registerNewUser(userDto);
-			return new ResponseEntity<UserDto>(registeredUser, HttpStatus.CREATED);
-		}
+	@PostMapping("/register")
+	public ResponseEntity<UserDto> registerUser(@Valid @RequestBody UserDto userDto) {
+		UserDto registeredUser = this.userService.registerNewUser(userDto);
+		return new ResponseEntity<UserDto>(registeredUser, HttpStatus.CREATED);
+	}
 
 }

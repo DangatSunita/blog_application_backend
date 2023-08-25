@@ -15,7 +15,7 @@ import com.lti.blog.paylods.CommentDto;
 import com.lti.blog.services.CommentService;
 
 @RestController
-@RequestMapping("/api/")
+@RequestMapping("/api/v1/")
 public class CommentController {
 
 	@Autowired
